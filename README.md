@@ -27,14 +27,16 @@ This application is designed to manage products.
     - Using make:
       ```
        make docker-up &&
-       make database-create &&
        make composer-install &&
-       make run-migrations
+       make database-create &&
+       make schema-create &&
+       make run-migrations &&
+       make php-load-fixtures
        ```
 
 3. **Test the application**:
    ```
-     make database-test-create && make test-all
+     make database-test-create && make schema-test-create && make test-all
      ```
    ```bash
      Testing 

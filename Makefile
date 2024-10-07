@@ -39,3 +39,6 @@ schema-create:
 
 database-test-create:
 	docker compose exec php  php bin/console d:d:c -e test --if-not-exists --no-interaction
+
+schema-test-create:
+	docker compose exec php  php bin/console d:s:c -e test --no-interaction
