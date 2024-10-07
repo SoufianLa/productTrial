@@ -20,3 +20,6 @@
 ###< phpunit/phpunit ###
 
 /docker/db/data
+
+.DS_Store
+.idea
