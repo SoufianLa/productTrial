@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Export Data{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Export Data</h1>
+
+        {{ form_start(exportForm) }}
+
+        <div class="form-group">
+            <label for="format">Choose export format:</label>
+            {{ form_widget(exportForm.format) }}
+        </div>
+
+        <div class="form-group">
+            <label for="email">Enter your email:</label>
+            {{ form_widget(exportForm.email) }}
+        </div>
+
+        {{ form_end(exportForm) }}
+
+        {% if exportSuccess is defined %}
+            {% if exportSuccess %}
+                <div class="alert alert-success mt-4">
+                    Export started! You will receive an email once it's complete.
+                </div>
+            {% else %}
+                <div class="alert alert-danger mt-4">
+                    Export failed! Please try again.
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+product:
+  code:
+    not_blank: "Code name should not be blank"
+  name:
+    not_blank: "Product name should not be blank"
+    length:
+      min: "Product name must be at least {{ limit }} characters long"
+      max: "Product name cannot be longer than {{ limit }} characters"
+  description:
+    length_max: "Description cannot be longer than {{ limit }} characters"
+  image:
+    url: "Image must be a valid URL"
+  category:
+    not_blank: "Category should not be blank"
+  price:
+    not_null: "Price cannot be null"
+    positive: "Price must be positive"
+  quantity:
+    not_null: "Quantity cannot be null"
+    gte: "Quantity cannot be negative"
+  internal_reference:
+    length:
+      min: "Internal reference must be at least {{ limit }} characters"
+      max: "Internal reference cannot be longer than {{ limit }} characters"
+  shell_id:
+    not_null: "Shell ID cannot be null"
+    positive: "Shell ID must be a positive integer"
+  inventory_status:
+    choice: "Invalid inventory status"
+  rating:
+    not_null: "Rating cannot be null"
+    range: "Rating must be between {{ min }} and {{ max }}"
